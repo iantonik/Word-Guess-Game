@@ -1,38 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/CSS/style.css">
     <script src="assets/javascript/game.js"></script>
     <title>Document</title>
 </head>
+
 <body>
+    <header>
+        <h1>Word Guessing Game!</h1>
+        <h2>Press any key to get started!</h2>
 
-    <main>
-        <div>
-            <h1>Word Guessing Game!</h1>
-            <h2>Press any key to get started!</h2>
-        </div>
-        <div>
-            <p>You've won # of times!</p>
-            <span id="wins"></span>
-        </div>
-        <div>
-            <p>Current Word</p>
-            <p id="word"></p>
-        </div>
-        <div>
-            <p>Guessed Letters: </p>
-            <p id="guessedLetters"></p>
-        </div>
-        <div>
-            <p>Number of guesses remaining:</p>
-            <p id="remainingGuesses"></p>
-        </div>
+    </header>
 
-        
+    <main class="container">
+        <div class="row justify-content-end">
+            <!-- <div class="col-sm-12 col=md-2 col-lg-3">
+                <div>
+                    <img src="assets/images/h0.png" alt="Wooden Frame">
+                </div>
+            </div> -->
+
+            <div class="col-sm-12 col-md-8 col-lg-8">
+
+
+                <div>
+                    <p>Current Word</p>
+                    <p class="stats" id="word"></p>
+                </div>
+                <div>
+                    <p>Guessed Letters: </p>
+                    <p class="stats" id="guessedLetters"></p>
+                </div>
+                <div>
+                    <p>Number of guesses remaining:</p>
+                    <p class="stats" id="remainingGuesses"></p>
+                </div>
+                <div>
+                    <p>You've won # of times!</p>
+                    <p class="stats" id="wins"></p>
+                </div>
+            </div>
+
+        </div>
     </main>
-    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
 </body>
+
 </html>
