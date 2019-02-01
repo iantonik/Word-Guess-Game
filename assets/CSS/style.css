@@ -19,6 +19,7 @@ p{
 }
 .stats {
     font-size: x-large;
+    height: 30px;
     color: #d316b5;
     padding-left: 15%;
     
