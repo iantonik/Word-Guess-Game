@@ -24,8 +24,6 @@ document.onkeyup = function () {
         gameStatus();
         
     }
-
-
 }
 
 
