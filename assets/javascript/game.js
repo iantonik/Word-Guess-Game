@@ -9,24 +9,27 @@ var activeWord = []
 var gameReset = true;
 
 
-document.onkeyup= function() {
-    if (gameReset){
+document.onkeyup = function () {
+    if (gameReset) {
+        document.getElementById("user-win").style.visibility = "hidden";
+        document.getElementById("user-lost").style.visibility = "hidden";
         resetStats()
         newWord()
         updateStats()
-        gameReset=false;
+        gameReset = false;
     }
     else {
         validateUserGuess();
         updateStats();
         gameStatus();
+        
     }
 
 
 }
 
 
-function resetStats(){
+function resetStats() {
     remainingGuesses = 12;
     guessedLetters = [];
     word;
@@ -57,10 +60,11 @@ function validateUserGuess() {
 
 
     var numberOfGuessedLetters = 0;
-    if (!userGuess.match(/^[a-z]+$/)) {
+    
+    if (!userGuess.match(/^[a-z]$/)) {
         alert("Invalid choice of letters. Please try again.")
     }
-    else if (guessedLetters.length && guessedLetters.indexOf(userGuess) >= 0){
+    else if (guessedLetters.length && guessedLetters.indexOf(userGuess) >= 0) {
         alert("You already guessed this letter. Please try again.")
     }
     else {
@@ -83,13 +87,17 @@ function gameStatus() {
     if (activeWord.indexOf(" _ ") === -1) {
         wins++;
         updateStats();
-        gameReset = true;
-        alert("Congrats! You won! Let's play again.")
+        document.getElementById("user-win").style.visibility = "visible";
+        gameReset=true;
+        
+        
     }
-    else if (remainingGuesses === 0){
+    else if (remainingGuesses === 0) {
         updateStats();
+        document.getElementById("user-lost").style.visibility = "visible";
         gameReset = true;
-        alert("You Lost! Lets play again!")
+        
     }
+
 }
 

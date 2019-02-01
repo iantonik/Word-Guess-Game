@@ -5,7 +5,7 @@ body{
 
 header{
     height: 150px;
-    margin: 50px 0px 50px 0px;
+    margin-top: 50px;
     text-align: center;
 }
 
@@ -22,4 +22,29 @@ p{
     color: #d316b5;
     padding-left: 15%;
     
+}
+
+#end-game{
+    height: 120px;
+    font-family: 'Permanent Marker', cursive;
+}
+
+#user-win{
+    display: block;
+    position: absolute;
+    width: 50%;
+    visibility: hidden;
+    background-image: url("../images/win_background.jpg");
+    text-align: center;
+
+}
+
+#user-lost{
+    display: block;
+    position: absolute;
+    width: 50%;
+    visibility: hidden;
+    background-image: url("../images/lost_background.jpeg");
+    text-align: center;
+
 }
