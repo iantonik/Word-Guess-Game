@@ -54,10 +54,17 @@ function validateUserGuess() {
     var numberOfGuessedLetters = 0;
 
     if (!userGuess.match(/^[a-z]$/)) {
-        alert("Invalid choice of letters. Please try again.");
+        document.getElementById("invalidLetter").style.visibility = "visible";
+        setTimeout(function(){
+            document.getElementById("invalidLetter").style.visibility="hidden"
+        }, 1500);
+
     }
     else if (guessedLetters.length && guessedLetters.indexOf(userGuess) >= 0) {
-        alert("You already guessed this letter. Please try again.");
+        document.getElementById("duplicateLetter").style.visibility = "visible";
+        setTimeout(function(){
+            document.getElementById("duplicateLetter").style.visibility="hidden"
+        }, 1500);
     }
     else {
         for (var i = 0; i < word.length; i++) {
@@ -80,7 +87,7 @@ function gameStatus() {
         wins++;
         updateStats();
         document.getElementById("user-win").style.visibility = "visible";
-        gameReset=true;  
+        gameReset = true;
     }
     else if (remainingGuesses === 0) {
         updateStats();

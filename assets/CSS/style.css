@@ -35,8 +35,10 @@ p{
     position: absolute;
     width: 50%;
     visibility: hidden;
-    background-image: url("../images/win_background.jpg");
+    /* background-image: url("../images/win_background.jpg"); */
     text-align: center;
+    color: green;
+    font-size: xx-large;
 
 }
 
@@ -45,7 +47,28 @@ p{
     position: absolute;
     width: 50%;
     visibility: hidden;
-    background-image: url("../images/lost_background.jpeg");
+    /* background-image: url("../images/lost_background.jpeg"); */
     text-align: center;
+    color: red;
 
+}
+
+#invalidLetter{
+    display: block;
+    position: absolute;
+    width: 50%;
+    visibility: hidden;
+    /* background-image: url("../images/lost_background.jpeg"); */
+    text-align: center;
+    color: red;
+}
+
+#duplicateLetter{
+    display: block;
+    position: absolute;
+    width: 50%;
+    visibility: hidden;
+    /* background-image: url("../images/lost_background.jpeg"); */
+    text-align: center;
+    color: red;
 }
