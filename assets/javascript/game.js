@@ -40,7 +40,7 @@ function updateStats() {
 
 function newWord() {
     word = wordBank[Math.floor(Math.random() * wordBank.length)];
-    console.log(word);
+    //console.log(word);
     for (var i = 0; i < word.length; i++) {
         activeWord.push(" __ ");
     };
