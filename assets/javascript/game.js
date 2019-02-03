@@ -28,7 +28,6 @@ document.onkeyup = function () {
 function resetStats() {
     remainingGuesses = 12;
     guessedLetters = [];
-    word;
     activeWord = [];
 }
 
@@ -41,41 +40,39 @@ function updateStats() {
 
 function newWord() {
     word = wordBank[Math.floor(Math.random() * wordBank.length)];
+    console.log(word);
     for (var i = 0; i < word.length; i++) {
         activeWord.push(" __ ");
-        console.log(word);
     };
     document.getElementById("word").innerText = activeWord.join(" ");
 }
 
+function flashElement(id) {
+    var el = document.getElementById(id);
+    el.style.visibility = "visible";
+    setTimeout(function(){
+        el.style.visibility="hidden"
+    }, 1500);
+}
 
 function validateUserGuess() {
     userGuess = event.key;
     var numberOfGuessedLetters = 0;
 
     if (!userGuess.match(/^[a-z]$/)) {
-        document.getElementById("invalidLetter").style.visibility = "visible";
-        setTimeout(function(){
-            document.getElementById("invalidLetter").style.visibility="hidden"
-        }, 1500);
-
+        flashElement("invalidLetter");
     }
-    else if (guessedLetters.length && guessedLetters.indexOf(userGuess) >= 0) {
-        document.getElementById("duplicateLetter").style.visibility = "visible";
-        setTimeout(function(){
-            document.getElementById("duplicateLetter").style.visibility="hidden"
-        }, 1500);
+    else if (guessedLetters.indexOf(userGuess) >= 0) {
+        flashElement("duplicateLetter");
     }
     else {
         for (var i = 0; i < word.length; i++) {
-
             if (word.charAt(i) === userGuess) {
                 activeWord[i] = userGuess;
                 numberOfGuessedLetters++;
             }
         }
         if (numberOfGuessedLetters === 0) {
-            console.log("wrong guess");
             --remainingGuesses;
         }
         guessedLetters.push(userGuess);
